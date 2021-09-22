@@ -1,0 +1,31 @@
+body {
+  height: 600px;
+}
+input:focus {
+  /* border-color:  !important; */
+  box-shadow: none !important;
+}
+.error {
+  color: red !important;
+}
+
+.white-phone {
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+}
+.phone-content-container {
+  position: relative;
+  z-index: -1;
+  width: 211px;
+  height: 371px;
+  /* border: 1px solid black; */
+}
+.phone-content {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  top: 13px;
+  width: 211px;
+  height: 371px;
+}

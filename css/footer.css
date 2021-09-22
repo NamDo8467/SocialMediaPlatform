@@ -1,0 +1,11 @@
+/* footer {
+  height: 400px;
+  border: 2px solid black;
+} */
+
+/* footer > ul > div > li {
+  font-size: 11px !important;
+} */
+footer > div > ul > li {
+  font-size: 12px !important;
+}

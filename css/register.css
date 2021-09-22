@@ -1,0 +1,10 @@
+body {
+  height: 600px;
+}
+input:focus {
+  /* border-color:  !important; */
+  box-shadow: none !important;
+}
+.error {
+  color: red !important;
+}
