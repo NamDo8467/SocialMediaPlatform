@@ -64,7 +64,7 @@
                     <img src="./images/instagram_logo.png" alt="instagram_logo">
                 </div>
                 <form action='register.php' method="POST">
-                <div class="error col-12 mb-3"> 
+                    <div class="error col-12 mb-3"> 
                         <?php echo $errors['username']?>
                     </div> 
                     <div class="col-12 mb-3"> 
