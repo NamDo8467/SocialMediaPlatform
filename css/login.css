@@ -2,7 +2,6 @@ body {
   height: 600px;
 }
 input:focus {
-  /* border-color:  !important; */
   box-shadow: none !important;
 }
 .error {
@@ -11,21 +10,23 @@ input:focus {
 
 .white-phone {
   position: absolute;
-  z-index: -1;
-  top: 70px;
+  z-index: 1;
+  top: 60px;
+  height: 480px;
+  width: 300px;
 }
 .phone-content-container {
   position: relative;
-  z-index: -1;
-  width: 211px;
-  height: 371px;
-  /* border: 1px solid black; */
+  z-index: 1;
+  height: 480px;
+  width: 300px;
 }
 .phone-content {
   position: absolute;
   z-index: 1;
-  left: 20px;
-  top: 13px;
-  width: 211px;
-  height: 371px;
+  left: 87px;
+  top: 63px;
+  width: 200px;
+  height: 360px;
+  border: 1px solid black;
 }
