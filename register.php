@@ -3,27 +3,19 @@
     $errors = ['username'=>'','email'=>'', 'password'=>''];
     
     if(isset($_POST['submit'])){
-        if (!empty($_POST['username'])) {
-            $username =  mysqli_real_escape_string($connection, $_POST['username']);
-        }else{
-            $errors['username'] = 'Please enter a username';
-        }
+        !empty($_POST['username'])?$username = mysqli_real_escape_string($connection, $_POST['username']): $errors['username'] = 'Please enter a username';
         
-        if(!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            $email = mysqli_real_escape_string($connection, $_POST['email']);
+
+        (!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))?
+        $email = mysqli_real_escape_string($connection, $_POST['email']):
+        $errors['email'] = 'Please enter a valid email';
             
-        }else{
-            $errors['email'] = 'Please enter a valid email';
+
+        (!empty($_POST['password']) && strlen($_POST['password']) >= 8)?
+        $password = mysqli_real_escape_string($connection, $_POST['password']):        
+        $errors['password'] = 'Your password must be at least 8 characters';
             
-        }
-        if(!empty($_POST['password']) && strlen($_POST['password']) >= 8){
-            $password =  mysqli_real_escape_string($connection, $_POST['password']);
-            
-        }
-        else{
-            $errors['password'] = 'Your password must be at least 8 characters';
-            
-        }
+        
         if(!$errors['email'] && !$errors['password']){
             $query = "INSERT INTO user_information(email_or_phone, password, username, followers, following, posts) VALUES('$email', '$password', '$username', 0,0,0)";
 
@@ -34,11 +26,7 @@
             }
         }
         
-   
-    }
-
-
-
+       }
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +90,6 @@
            
         </div>
     </div>
-
     <?php include('footer.php') ?>
 </body>
 </html>
