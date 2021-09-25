@@ -1,8 +1,9 @@
 const phoneContentContainer = document.querySelector(
   ".phone-content-container"
 );
-const createImages = () => {
+const createImages = async () => {
   let numberImage = Math.floor(Math.random() * (11 - 1) + 1);
+
   for (let i = 1; i < 5; i++) {
     let phoneContent = document.createElement("img");
     phoneContent.className = "phone-content";
@@ -10,7 +11,11 @@ const createImages = () => {
     phoneContent.alt = "instagram phone content";
 
     phoneContentContainer.appendChild(phoneContent);
-    numberImage = Math.floor(Math.random() * (11 - 1) + 1);
+    let randomNumber = [numberImage];
+    while (randomNumber.includes(numberImage)) {
+      numberImage = Math.floor(Math.random() * (11 - 1) + 1);
+    }
+    randomNumber.push(numberImage);
   }
 };
 
@@ -52,22 +57,5 @@ const startChangingContent = async () => {
   phoneContent[3].style.transition = "opacity 1s";
 };
 
-const removeImages = () => {
-  console.log(phoneContentContainer.children.length);
-
-  while (phoneContentContainer.firstChild) {
-    phoneContentContainer.removeChild(phoneContentContainer.firstChild);
-  }
-
-  console.log(phoneContentContainer.children.length);
-};
-const a = async () => {
-  createImages();
-  await startChangingContent();
-  // console.log(phoneContentContainer.children[1]);
-  // phoneContentContainer.remove();
-
-  removeImages();
-};
-
-a();
+createImages();
+startChangingContent();
