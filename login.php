@@ -1,5 +1,4 @@
 <?php
-    session_start();
    include('dbConfig.php');
 
     $errors = ['email_or_phone'=>'', 'password'=>''];
@@ -14,13 +13,12 @@
             $query = "SELECT * FROM `user_information` WHERE email_or_phone = '$email_or_phone' and password = '$password' ";
             $result = mysqli_query($connection, $query);
             
-            
             $user_information = mysqli_fetch_assoc($result);
             if(empty($user_information)){
                 $errors['email_or_phone'] = 'Email, phone number or password is wrong';
             }else{
-                setcookie('id', $user_information['id'], time()+60, "user.php");
-                header("Location:user.php");
+                setcookie('id', $user_information['id'], time()+ 60*60, "/");
+                header("Location:profile.php");
             }
         }
     }
