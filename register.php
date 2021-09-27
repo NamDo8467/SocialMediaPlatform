@@ -17,7 +17,7 @@
             
         
         if(!$errors['email'] && !$errors['password']){
-            $query = "INSERT INTO user_information(email_or_phone, password, username, followers, following, posts) VALUES('$email', '$password', '$username', 0,0,0)";
+            $query = "INSERT INTO user_information(email_or_phone, password, username, followers, following, posts, bio) VALUES('$email', '$password', '$username', 0,0,0, ' ')";
 
             if(mysqli_query($connection, $query)){
                 header('Location: login.php');
