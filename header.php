@@ -1,12 +1,12 @@
-<header class="border">
-      <div class="row py-2 px-5 align-items-center">
-        <div class="col logo-container">
-          <a href="#" class="logo">Logo</a>
+<header class="border sticky-top bg-white">
+      <div class="row py-2 px-3 px-md-5 align-items-center">
+        <div class="logo-container col">
+          <a href="index.php" class="logo">Logo</a>
         </div>
-        <div class="col input-group-sm search-bar-container">
+        <div class="col input-group-sm search-bar-container d-none d-md-inline">
           <input class="form-control" type="text" name="search" id="search-bar" placeholder="Search">
         </div>
-        <ul class="nav col justify-content-end">
+        <ul class="nav col justify-content-end flex-nowrap">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#"><span class="material-icons">home</span></a>
           </li>
@@ -17,7 +17,7 @@
             <a class="nav-link" href="#"><span class="material-icons">explore</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">account_circle</span></a>
+            <a class="nav-link" href="profile.php"><span class="material-icons">account_circle</span></a>
           </li>
         </ul>
       </div>
