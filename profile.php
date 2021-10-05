@@ -22,7 +22,6 @@
         $avatar = $user_information['avatar'];
         $avatarContent = '';
         if($avatar!= NULL){
-            $avatarDecodedContent =  base64_encode($avatar);
             $avatarContent = decodeImageContent($avatar);
         }else{
             $avatarContent = "images/temporary_avatar.jpg";
@@ -69,14 +68,14 @@
                         <div class="col-12 col-md-3">
                             <p class='my-auto fs-4'><?php echo htmlspecialchars($username)?></p>
                         </div>
-                        <button class="btn btn-light border col-12 col-md-2">Edit profile</button>
+                        <button class="btn btn-light border col-12 col-md-2"><a href="editProfile.php">Edit Profile</a></button>
                     </div>
 
                     <div class="follow-information-container row justify-content-between mb-3">
                         <div class="posts col col-md-2">
                             <?php echo $post_number.' '.'posts'?>
                         </div>
-                        <div class=" follower  col col-md-3 ">
+                        <div class=" follower col col-md-3 ">
                             <?php echo htmlspecialchars($following),' '.'followers'?> 
                         </div>
                         <div class="following col col-md-7">
